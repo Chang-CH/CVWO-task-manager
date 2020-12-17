@@ -8,7 +8,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn --cwd task-app install && yarn --cwd task-app build",
+    "deploy": "cp -a task-app/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
   },
   "repository": {
     "type": "git",
