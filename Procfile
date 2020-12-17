@@ -1,2 +1,2 @@
-web: PORT=4000 yarn --cwd task-app start
-api: PORT=3000 bundle exec rails server
+web: bundle exec rails s
+release: bin/rake db:migrate
