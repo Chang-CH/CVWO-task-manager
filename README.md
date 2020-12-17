@@ -1,4 +1,6 @@
 # README
+* Deployed on: https://cvwo-task-manager.herokuapp.com/
+
 * Versions used
 
 Rails 6.0.3.4
