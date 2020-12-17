@@ -4,3 +4,4 @@ namespace :start do
     end
   enddesc 'Start development server'
   task :start => 'start:development'
+end
