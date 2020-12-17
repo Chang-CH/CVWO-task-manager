@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+#   Test task can be removed, but General Category must be initialized
+#   The category is the default category when a task is created without choosing any categories
+#   General category cannot be edited/deleted from the front end otherwise
 categories = Category.create([{name: 'General'}])
 Task.create([
     {title: 'Test task', done: 'false', category: categories.first}
