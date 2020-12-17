@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-categories = Category.create([{name: 'General'}, {name: 'School'}])
+categories = Category.create([{name: 'General'}])
 Task.create([
-    {title: 'Buy supper', done: 'false', category: categories.first},
-    {title: 'Submit appeal', done: 'false', category: categories.first}
+    {title: 'Test task', done: 'false', category: categories.first}
     ])
