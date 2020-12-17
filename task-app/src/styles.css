@@ -1,0 +1,255 @@
+:root{
+    --base-bg: #1a1a2e;
+    --container-bg: #16213e;
+    --container-hover: #0f3460;
+    --text-default: #ffffff;
+    --hue-primary: #00bfff;
+    --view: #3282b8;
+    --edit: #4ecca3;
+    --delete: #ed6363;
+    --header: #0f4c75;
+    --header-hover: #3282b8;
+    --disabled: #343947;
+    --disabled-text: #242730;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Arial Rounded MT';
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: var(--base-bg);
+    color: var(--text-default);
+}
+
+.full-height{
+    height: 100%;
+}
+
+
+.full-width{
+    width: 100%;
+}
+
+.flex-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-centered{
+    display: block;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.flex-inline{
+    display: inline-flex;
+}
+
+.space-right{
+    margin-right: auto;
+}
+
+a:link{
+    text-decoration: none;
+    color: var(--text-default);
+}
+
+a:visited{
+    color: var(--text-default);
+}
+
+:hover{
+    transition: 1.0s;
+}
+
+.col-container{
+    background-color: var(--container-bg);
+}
+
+.col-done{
+    background-color: var(--disabled);
+    color: var(--disabled-text);
+}
+
+.generic-container{
+    width: 80%;
+    margin: 10px;
+    
+    padding: 20px;
+    border-radius: 10px;
+    margin-inline: 10%;
+    height: fit-content;
+}
+
+.table-edit-controls{
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 30%;
+}
+
+.btn{
+    font-size: 2vw;
+    margin: 10px;
+    border-radius: 5px;
+    border: solid;
+    font-weight: bolder;
+    transition: background-color, color 0.3s;
+}
+
+.btn:hover{
+    border: solid
+}
+
+.col-view{
+    background-color: var(--view);
+    color: var(--container-bg);
+    border: solid;
+    transition: 0.3s;
+}
+
+.col-view:hover{
+    background-color: var(--container-bg);
+    color: var(--view);
+}
+
+.col-delete{
+    background-color: var(--delete);
+    color: var(--container-bg);
+}
+
+.col-delete:hover{
+    background-color: var(--container-bg);
+    color: var(--delete);
+}
+
+.col-edit{
+    background-color: var(--edit);
+    color: var(--container-bg);
+}
+
+.col-edit:hover{
+    background-color: var(--container-bg);
+    color: var(--edit);
+}
+
+.input-done{
+    height: 30px;
+    margin: 10px;
+}
+
+.input-text{
+    font-size: 2vw;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: var(--base-bg);
+    color: var(--hue-primary);
+    border: solid;
+    transition: 0.3s;
+}
+
+.input-text:hover{
+    background-color: var(--container-hover);
+}
+
+/* Welcome specific */
+.welcome{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    font-size: 500%;
+    border: none;
+    background-color: var(--container-bg);
+}
+
+.welcome:hover{
+    background-color: var(--container-hover);
+    transition: background-color 1.0s;
+}
+
+.btn-welcome{
+    width: 50%;
+    height: 40vh;
+}
+
+.btn-welcome:hover{
+    background-color: var(--container-hover);
+}
+
+/* navbar specific */
+.navbar{
+    position: sticky;
+    top: 0;
+    height: 7%;
+    border: none;
+    padding-left: 20px;
+    font-size: small;
+    background-color: var(--header);
+}
+
+.nav-title{
+    margin-right: auto;
+    font-size: 4vw;
+}
+
+.nav-title:hover{
+    color: var(--hue-primary);
+}
+
+.dropdown-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-weight: bolder;
+    font-size: 5vh;
+    background-color: var(--container-bg);
+    border: solid var(--view);
+    padding-inline: 25px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.dropdown-toggle:hover{
+    background-color: var(--view);
+    border-color: var(--container-bg);
+    transition: 0.5s;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.show{
+    display: grid;
+}
+
+.dropdown-item{
+    background-color: var(--container-bg);
+    right: 50%;
+    font-size: large;
+    padding: 5px;
+}
+
+.dropdown-item:hover{
+    background-color: var(--container-hover);
+    transition: 0.3s;
+}
+
