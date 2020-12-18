@@ -1,4 +1,6 @@
-# README
+# CVWO Assignment - E0543479 CHANG CHUAN HAO
+* Deployed on: https://cvwo-task-manager.herokuapp.com/
+
 * Versions used
 
 Rails 6.0.3.4
