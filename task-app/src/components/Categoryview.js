@@ -55,33 +55,36 @@ class Taskview extends Component {
     }
     
     // saves to done === false by default
-    updateCategory = (event)  => {
+    updateCategory = async (event)  => {
         const updated = {
             name: this.state.inputValue
         }
         if (this.state.category_id === Constants.NULL_INDEX){
-            axios.post(Constants.RAILS_CATEGORY_URL, {category: updated})
-            .catch(error => console.log(error))
+            await axios.post(Constants.RAILS_CATEGORY_URL, {category: updated})
+                .catch(error => console.log(error))
+            this.props.history.push("/categories/")
         }
         else if (this.state.category_id !== Constants.GENERAL_CATEGORY){
-            axios.put(Constants.RAILS_CATEGORY_URL + String(this.state.category_id), {task: updated})
-            .catch(error => console.log(error))
+            await axios.put(Constants.RAILS_CATEGORY_URL + String(this.state.category_id), {task: updated})
+                .catch(error => console.log(error))
+            this.props.history.push("/categories/")
         } else {
             console.log("Categoryview updateCategory error: changing general category")
         }
     }
     
-    deleteCategory(category_id){
-        axios.delete(Constants.RAILS_CATEGORY_URL + String(category_id)).catch(error => console.log(error))
-        axios.get(Constants.RAILS_TASK_URL)
-        .then(response => {
-            response.data.forEach((task) => {
-                if(task.category_id === category_id){
-                    axios.delete(Constants.RAILS_TASK_URL + String(task.id)).catch(error => console.log(error))
-                }
-            })
-        }).catch(error => console.log(error))
-    }
+    // Deprecated: delete no longer in categoryview.
+    // deleteCategory(category_id){
+    //     axios.delete(Constants.RAILS_CATEGORY_URL + String(category_id)).catch(error => console.log(error))
+    //     axios.get(Constants.RAILS_TASK_URL)
+    //     .then(response => {
+    //         response.data.forEach((task) => {
+    //             if(task.category_id === category_id){
+    //                 axios.delete(Constants.RAILS_TASK_URL + String(task.id)).catch(error => console.log(error))
+    //             }
+    //         })
+    //     }).catch(error => console.log(error))
+    // }
 
     render(){
         const html_render = (
@@ -102,12 +105,10 @@ class Taskview extends Component {
             <tbody>
             <tr>
             <td>
-                <Link to={"/categories/"}>
-                    <button className="btn col-edit full-width" 
-                    onClick={this.updateCategory}>
-                        {this.state.category_id === Constants.NULL_INDEX ? "Create": "Save"}
-                    </button>
-                </Link>
+                <button className="btn col-edit full-width" 
+                onClick={this.updateCategory}>
+                    {this.state.category_id === Constants.NULL_INDEX ? "Create": "Save"}
+                </button>
             </td>
             <td>
                 <Link to={"/categories/"}>

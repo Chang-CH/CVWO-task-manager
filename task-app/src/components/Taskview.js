@@ -60,34 +60,36 @@ class Taskview extends Component {
     }
     
     // saves to done === false by default
-    updateTask = (event)  => {
+    updateTask = async (event)  => {
             const updated = {
                 title: this.state.inputValue,
                 category_id: this.state.category_to,
                 done: false
             }
             if (this.state.task_id !== Constants.NULL_INDEX){
-                axios.put(Constants.RAILS_TASK_URL + String(this.state.task_id), {task: updated})
-                .then(this.props.history.push("/categories/" + String(this.state.category_id)))
-                .catch(error => console.log(error))
+                await axios.put(Constants.RAILS_TASK_URL + String(this.state.task_id), {task: updated})
+                    .catch(error => console.log(error))
+                this.props.history.push("/categories/" + String(this.state.category_id))
             } else {
-                axios.post(Constants.RAILS_TASK_URL, {task: updated})
-                .then(this.props.history.push("/categories/" + String(this.state.category_id)))
-                .catch(error => console.log(error))
+                await axios.post(Constants.RAILS_TASK_URL, {task: updated})
+                    .catch(error => console.log(error))
+                this.props.history.push("/categories/" + String(this.state.category_id))
             }
         }
     
-    deleteTask = (event) => {
-            axios.delete(Constants.RAILS_TASK_URL + String(this.state.task_id))
-            .then(this.props.history.push("/categories/" + String(this.state.category_id)))
-            .catch(error => console.log(error))
-        }
+    // Deprecated -- delete no longer in taskview
+    // deleteTask = (event) => {
+    //     axios.delete(Constants.RAILS_TASK_URL + String(this.state.task_id))
+    //     .then(this.props.history.push("/categories/" + String(this.state.category_id)))
+    //     .catch(error => console.log(error))
+    // }
 
     render(){
-        var op_task = Constants.NULL_INDEX
-        if (this.state.tasks !== [] && this.state.tasks[0] !== undefined){
-            op_task = this.state.tasks[0]
-        }
+        // Deprecated -- use for dynamic title
+        // var op_task = Constants.NULL_INDEX
+        // if (this.state.tasks !== [] && this.state.tasks[0] !== undefined){
+        //     op_task = this.state.tasks[0]
+        // }
         const html_render = (
             <div>
                 {/* <Navbar text={op_task === Constants.NULL_INDEX 

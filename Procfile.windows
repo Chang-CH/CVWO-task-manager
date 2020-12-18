@@ -1,0 +1,2 @@
+web: cross-env PORT=3000 yarn --cwd task-app start
+api: cross-env PORT=4000 bundle exec rails server

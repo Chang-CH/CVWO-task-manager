@@ -84,7 +84,7 @@ class Tasks extends Component {
                 <Link to={this.state.category_id === Constants.NULL_INDEX 
                     ? {pathname: "/tasks/new"} 
                     : {pathname: `/tasks/update/${this.state.category_id}`}}>
-                <div className="generic-container flex-centered">
+                <div className="generic-container flex-centered col-view">
                     <label className="label-task">Create new task</label>
                 </div>
                 </Link>
