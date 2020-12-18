@@ -7,7 +7,7 @@ import Tasks from './components/Tasks'
 import Categories from './components/Categories'
 import Taskview from './components/Taskview'
 import Categoryview from './components/Categoryview'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {HashRouter as Router, Switch, Route} from 'react-router-dom'
 
 class App extends Component {
   render() {

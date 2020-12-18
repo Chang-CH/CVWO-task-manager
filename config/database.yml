@@ -26,6 +26,4 @@ production:
   encoding: unicode
   database: sample_postgres_production
   pool: 5
-  username: postgres
-  password: Ssolace43248
   database: db/production.postgresql
