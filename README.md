@@ -1,5 +1,6 @@
-# CVWO Assignment - E0543479 CHANG CHUAN HAO
+# CVWO Assignment - A0217443J CHANG CHUAN HAO
 * Deployed on : https://cvwo-task-manager.herokuapp.com/
+* CVWO write ups can be found under ./cvwo-write-up
 
 Versions used :
 
