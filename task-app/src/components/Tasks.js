@@ -12,7 +12,7 @@ class Tasks extends Component {
         super(props)
         this.state = {
             tasks: [],
-            category_id: "category_id" in props.match.params 
+            category_id: props.match !== undefined && "category_id" in props.match.params 
                 ? Number(props.match.params.category_id) 
                 : Constants.NULL_INDEX
         }

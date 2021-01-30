@@ -8,6 +8,7 @@ import Categories from './components/Categories'
 import Taskview from './components/Taskview'
 import Categoryview from './components/Categoryview'
 import {HashRouter as Router, Switch, Route} from 'react-router-dom'
+import * as Constants from './constants';
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
       <Router>
       <Switch>
         <Route name="home" path="/" exact component={Welcome}></Route>
-        <Route path="/tasks" exact component={Tasks}></Route>
+        <Route path="/tasks" exact render={() => <Tasks key={Constants.NULL_INDEX}/>}></Route>
         <Route path="/categories" exact component={Categories}></Route>
         <Route path="/categories/new" exact component={Categoryview}></Route>
         {/* params passed in link, query excessive for a task manager */}

@@ -8,7 +8,7 @@ class Welcome extends Component {
         return (
         <div>
         <div className="welcome flex-centered">
-            <p>Sample text</p>
+            <p>Welcome</p>
         </div>
         <div className="full-width flex-inline">
         <Link to="/tasks" className="btn-welcome flex-centered">
